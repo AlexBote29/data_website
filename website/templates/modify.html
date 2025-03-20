@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Modify{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <form method="POST">
+        <h3 align="center">Modify a Table</h3>
+
+        <!-- Modify Category ID -->
+        <h4>Modify Category ID</h4>
+        <div class="form-group">
+            <label for="old_category_id">Old Category ID</label>
+            <input type="text" class="form-control" id="old_category_id" name="old_category_id" placeholder="Enter old category ID" />
+        </div>
+        <div class="form-group">
+            <label for="new_category_id">New Category ID</label>
+            <input type="text" class="form-control" id="new_category_id" name="new_category_id" placeholder="Enter new category ID" />
+        </div>
+        <button type="submit" class="btn btn-primary">Update Category ID</button>
+
+        <br><br>
+
+        <!-- Modify Category Name -->
+        <h4>Modify Category Name</h4>
+        <div class="form-group">
+            <label for="old_category_name">Old Category Name</label>
+            <input type="text" class="form-control" id="old_category_name" name="old_category_name" placeholder="Enter old category name" />
+        </div>
+        <div class="form-group">
+            <label for="new_category_name">New Category Name</label>
+            <input type="text" class="form-control" id="new_category_name" name="new_category_name" placeholder="Enter new category name" />
+        </div>
+        <button type="submit" class="btn btn-primary">Update Category Name</button>
+
+        <br><br>
+
+        <!-- Modify Movie Title -->
+        <h4>Modify Movie Title</h4>
+        <div class="form-group">
+            <label for="old_movie_title">Old Movie Title</label>
+            <input type="text" class="form-control" id="old_movie_title" name="old_movie_title" placeholder="Enter old movie title" />
+        </div>
+        <div class="form-group">
+            <label for="new_movie_title">New Movie Title</label>
+            <input type="text" class="form-control" id="new_movie_title" name="new_movie_title" placeholder="Enter new movie title" />
+        </div>
+        <button type="submit" class="btn btn-primary">Update Movie Title</button>
+
+        <br><br>
+
+        <!-- Modify Movie ID -->
+        <h4>Modify Movie ID</h4>
+        <div class="form-group">
+            <label for="old_movie_id">Old Movie ID</label>
+            <input type="number" class="form-control" id="old_movie_id" name="old_movie_id" placeholder="Enter old movie ID" />
+        </div>
+        <div class="form-group">
+            <label for="new_movie_id">New Movie ID</label>
+            <input type="number" class="form-control" id="new_movie_id" name="new_movie_id" placeholder="Enter new movie ID" />
+        </div>
+        <button type="submit" class="btn btn-primary">Update Movie ID</button>
+
+        <br><br>
+
+        <!-- Modify Release Year -->
+        <h4>Modify Release Year</h4>
+        <div class="form-group">
+            <label for="old_release_year">Old Release Year</label>
+            <input type="number" class="form-control" id="old_release_year" name="old_release_year" placeholder="Enter old release year" />
+        </div>
+        <div class="form-group">
+            <label for="new_release_year">New Release Year</label>
+            <input type="number" class="form-control" id="new_release_year" name="new_release_year" placeholder="Enter new release year" />
+        </div>
+        <button type="submit" class="btn btn-primary">Update Release Year</button>
+    </form>
+</div>
+{% endblock %}
