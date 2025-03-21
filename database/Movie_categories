@@ -1,0 +1,70 @@
+CREATE DATABASE project;
+
+use project;
+
+
+
+CREATE TABLE categories (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    category_name VARCHAR(100) NOT NULL
+);
+
+
+CREATE TABLE movies (
+    movie_id INT AUTO_INCREMENT PRIMARY KEY,
+    movie_title VARCHAR(255) NOT NULL,
+    release_year INT
+);
+
+
+CREATE TABLE movie_categories (
+    movie_id INT NOT NULL,
+    category_id INT NOT NULL,
+	movie_title VARCHAR(255) NOT NULL,
+    category_name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (movie_id, category_id),
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id) 
+		ON UPDATE CASCADE
+        ON DELETE CASCADE ,
+    FOREIGN KEY (category_id) REFERENCES categories(category_id) 
+		ON UPDATE CASCADE
+        ON DELETE CASCADE 
+);
+SHOW TABLES;
+
+INSERT INTO categories (category_id,category_name) VALUES
+(1,'Action'),
+(2,'Comedy'),
+(3,'Drama'),
+(4,'Horror'),
+(5,'Science Fiction');
+
+
+INSERT INTO movies (movie_id,movie_title, release_year) VALUES
+(1,'Inception', 2010),
+(2,'The Dark Knight', 2008),
+(3,'The Godfather', 1972),
+(4,'The Conjuring', 2013),
+(5,'Interstellar', 2014);
+
+
+INSERT INTO movie_categories (movie_id, category_id, movie_title, category_name) VALUES
+(1, 5, 'Inception', 'Science Fiction'),  -- Inception -> Sci-Fi
+(2, 1, 'The Dark Knight', 'Action'),     -- The Dark Knight -> Action
+(3, 3, 'The Godfather', 'Drama'),        -- The Godfather -> Drama
+(4, 4, 'The Conjuring', 'Horror'),       -- The Conjuring -> Horror
+(5, 5, 'Interstellar', 'Science Fiction'), -- Interstellar -> Sci-Fi
+(2, 3, 'The Dark Knight', 'Drama'),      -- The Dark Knight -> Drama (also fits)
+(1, 1, 'Inception', 'Action');           -- Inception -> Action (for action scenes)
+
+
+SELECT * FROM movies;
+SELECT * FROM categories;
+SELECT * FROM movie_categories;
+
+
+
+
+DELETE FROM categories;
+DELETE FROM movies;
+DELETE FROM movie_categories;
